@@ -1,0 +1,24 @@
+nav{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    flex-direction: row;
+}
+.separacion-cajas-arriba {
+    padding: 15px;
+}
+.divlogo{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.logoprincipal{
+    width: 200px;
+    height: 100px;
+}
+.navegador{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

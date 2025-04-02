@@ -1,0 +1,16 @@
+* { 
+    box-sizing: border-box; 
+ } 
+body{
+ background-color: #172637;
+ min-height: 100%; 
+ font-family: "Darker Grotesque", sans-serif;
+ font-weight: bold;
+ font-size: large;
+}
+a{
+color: white;
+text-decoration: none;
+}
+@media (max-width: 420px){
+}
