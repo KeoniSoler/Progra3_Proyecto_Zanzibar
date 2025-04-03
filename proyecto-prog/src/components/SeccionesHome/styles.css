@@ -1,0 +1,30 @@
+.subtitulo{
+    color: white;
+    margin-top: 60px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.articleHome{
+    background-color: rgba(245, 245, 220, 0.226);
+    padding: 20px;
+    border: solid 2px lightblue;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5px;
+    width: 270px;
+}
+.sectionropahombres{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.sectionaccesorios{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}

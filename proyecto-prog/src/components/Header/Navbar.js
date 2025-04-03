@@ -1,11 +1,12 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import './styles.css';
 
 function Navbar(props) {
     return (
-        <nav class="nav">
+        <nav className="nav">
             {
-                props.barra.map((elm, idx) => <a key={`${idx}-${elm.name}`}>{elm.name}</a>)
+                props.barra.map((elm, idx) => <Link to={elm.path} key={`${idx}-${elm.name}`}>{elm.name}</Link>)
             }
             <span id="mensajeBienvenida"></span>
         </nav>

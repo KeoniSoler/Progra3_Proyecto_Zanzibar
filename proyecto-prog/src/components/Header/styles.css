@@ -4,9 +4,6 @@ nav{
     margin-top: 20px;
     flex-direction: row;
 }
-.separacion-cajas-arriba {
-    padding: 15px;
-}
 .divlogo{
     display: flex;
     justify-content: center;
@@ -21,4 +18,7 @@ nav{
     justify-content: space-around;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+.separacion-cajas-arriba {
+    padding: 15px;
 }

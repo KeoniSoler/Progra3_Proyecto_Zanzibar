@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import OpcionesMenu from "./OpcionesMenu";
+import LogoHeader from "./LogoHeader";
 import './styles.css';
 
 function Header() {
@@ -30,31 +31,32 @@ function Header() {
         {
             name: "LOGIN",
             id: "loginlink",
-            class: "separacion-cajas-arriba",
+            className: "separacion-cajas-arriba",
             path: "login.html"
         },
         {
             name: "REGISTRO",
             id: "registrolink",
-            class: "separacion-cajas-arriba",
+            className: "separacion-cajas-arriba",
             path: "register.html"
         },
         {
             name: "CARRITO",
             id: "carrlink",
-            class: "separacion-cajas-arriba",
+            className: "separacion-cajas-arriba",
             path: "cart.html"
         },
         {
             name: "LOGOUT",
             id: "logoutLink",
-            class: "separacion-cajas-arriba",
+            className: "separacion-cajas-arriba",
             path: "#"
         },
     ]
     return(
         <header>
-            <Navbar nav={barra}/>
+            <Navbar barra={nav}/>
+            <LogoHeader />
             <OpcionesMenu menu={opciones} />
         </header>
     )
