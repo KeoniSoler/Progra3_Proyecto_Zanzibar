@@ -28,3 +28,7 @@
     flex-direction: row;
     justify-content: space-around;
 }
+.imagenes{
+    height: 227px;
+    width: 227px;
+}

@@ -1,14 +1,48 @@
-import React from "react";
+import React, {Component} from "react";
 import './styles.css';
 
-function SeccionRopaHombre(props) {
-    return (
-        <section className="sectionropahombres">
-            {
-                props.prendas.map((elm, idx) => <article className="articleHome" key={`${idx}-${elm.Imagen}-${elm.Titulo}-${elm.Descripcion}-${elm.Precio}-${elm.VerMas}`}>{elm.Imagen}{elm.Titulo}{elm.Descripcion}{elm.Precio}{elm.VerMas}</article>)
-            }
-        </section>
-    );
+class SeccionRopaHombre extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            data: this.props.datos,
+            mostrarContenido: true,
+        }
+    }
+    ocultar (){
+        this.setState({
+            mostrarContenido: !this.state.mostrarContenido,
+        })
+    }
+    render() {
+        return (
+            <section className="sectionropahombres">
+                <article className="articleHome">
+                    <img src="${data[i].image}" alt="Ropa de Hombre" className="imagenes"/>
+                    <h4>{this.state.data.Titulo}</h4>
+                    {
+                       this.state.mostrarContenido === true ?
+                       <>
+                            <p>
+                                {this.state.data.Descripcion}
+                            </p>
+                       </>
+                       :
+                       ''
+                    }
+                    <button onClick={() => this.ocultar}>
+                        Ver descripcion
+                    </button>
+                    <button>
+                        Ir a detalle
+                    </button>
+                    <button>
+                        Agregar Favoritos
+                    </button>
+                </article>
+            </section>
+        );
+    }
 }
 export default SeccionRopaHombre
 

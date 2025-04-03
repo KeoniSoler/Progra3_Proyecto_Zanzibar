@@ -1,90 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SeccionRopaHombre from "./SeccionRopaHombre";
 import SeccionAccesorios from "./SeccionAccesorios";
-import {Link} from "react-router-dom";
+import ropa from "./DataRopa";
+import items from "./dataAcces";
 import './styles.css';
 
+console.log(ropa);
 function SeccionesHome() {
-    let ropa = [
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-    ]
-    let items = [
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-        {
-            Imagen: "",
-            Titulo: "Bolso de mano",
-            Descripcion: "index.html",
-            Precio: 50.99,
-            VerMas: "index.html"
-        },
-    ]
     return(
         <main>
             <h2 className="subtitulo"><Link to={"./category.html?category=men's clothing"}>ROPA HOMBRES</Link></h2>
-            <SeccionRopaHombre prendas={ropa} />
+            {
+                ropa.map((elm, idx) => <SeccionRopaHombre key={idx} datos={elm}/>)
+            }
             <h2 className="subtitulo"><Link to={"./category.html?category=jewelery"}>ACCESORIOS</Link></h2>
-            <SeccionAccesorios accesorio={items} />
+            {
+                items.map((elm, idx) => <SeccionAccesorios key={idx} datos={elm}/>)
+            }
         </main>
     )
 }
