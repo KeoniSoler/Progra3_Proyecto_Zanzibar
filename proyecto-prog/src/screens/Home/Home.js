@@ -1,5 +1,6 @@
 import React from "react";
 import SeccionesHome from "../../components/SeccionesHome/SeccionesHome";
+ 
 
 function Home() {
     return (

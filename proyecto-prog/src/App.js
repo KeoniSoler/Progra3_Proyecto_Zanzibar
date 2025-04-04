@@ -8,6 +8,7 @@ import Busqueda from "./screens/Busqueda/Busqueda";
 import NotFound from "./screens/NotFound/NotFound";
 import Loader from "./screens/Loader/Loader";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 //import '../public/css/styles.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route path={'/loader'} component={Loader} />
       <Route path={''} component={NotFound} />
     </Switch>
+    <Footer/>
     </>
   );
 }

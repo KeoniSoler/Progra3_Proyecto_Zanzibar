@@ -1,6 +1,6 @@
 import React from "react";
 
-function Detalle() {
+function Detalle(props) {
     const idObjeto = props.match.params.id
     return (
         <React.Fragment>
