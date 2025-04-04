@@ -1,13 +1,15 @@
 import React from "react";
+import {Link} from "react-router-dom";
+import './styles.css';
 
-function OpcionesMenu() {}
-    return(
-        <>
-            <a href="index.html">HOME</a>
-            <a href="category.html?category=electronics">ELECTRONICA</a>
-            <a href="category.html?category=jewelery">ACCESORIOS</a>
-            <a href="category.html?category=men's clothing">HOMBRE</a>
-            <a href="category.html?category=women's clothing">MUJER</a>
-        </>
-    )
+function OpcionesMenu(props) { 
+return (
+    <nav className="navegador">
+        {
+            props.menu.map((elm, idx) => <Link to={elm.path} key={`${idx}-${elm.name}`}>{elm.name}</Link>)
+        }
+    </nav>
+)
+}
 export default OpcionesMenu
+
