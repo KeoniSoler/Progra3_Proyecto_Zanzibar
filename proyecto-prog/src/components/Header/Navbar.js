@@ -6,7 +6,7 @@ function Navbar(props) {
     return (
         <nav className="nav">
             {
-                props.barra.map((elm, idx) => <Link to={elm.path} key={`${idx}-${elm.name}`}>{elm.name}</Link>)
+                props.barra.map((elm, idx) => <Link to={elm.path} className={elm.className} key={`${idx}-${elm.name}`}>{elm.name}</Link>)
             }
             <span id="mensajeBienvenida"></span>
         </nav>

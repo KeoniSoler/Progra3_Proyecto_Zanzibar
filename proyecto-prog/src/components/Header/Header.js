@@ -8,24 +8,20 @@ function Header() {
     let opciones = [
         {
             name: "HOME",
-            path: "index.html"
+            path: "/"
         },
         {
-            name: "ELECTRONICA",
-            path: "category.html?category=electronics"
+            name: "FAVORITOS",
+            path: "/favoritos"
         },
         {
-            name: "ACCESORIOS",
-            path: "category.html?category=jewelery"
+            name: "POPULARES",
+            path: "..."
         },
         {
-            name: "HOMBRE",
-            path: "category.html?category=men's clothing"
-        },
-        {
-            name: "MUJER",
-            path: "category.html?category=women's clothing"
-        },
+            name: "CARTELERA",
+            path: "..."
+        }
     ]
     let nav = [
         {

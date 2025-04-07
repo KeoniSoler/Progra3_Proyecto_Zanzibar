@@ -1,0 +1,17 @@
+.notfound{
+    color: rgb(133, 3, 3);
+    background-color: rgb(0, 0, 0);
+    margin-right: 150px;
+    margin-left: 150px;
+    text-align: center;
+    padding: 40px
+}
+.texto{
+    font-weight: lighter;
+}
+.volver{
+    border: white solid 1px;
+    padding: 5px;
+    justify-content: center;
+    margin-top: 30px;
+}

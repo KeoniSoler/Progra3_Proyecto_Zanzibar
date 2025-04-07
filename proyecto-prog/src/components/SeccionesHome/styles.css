@@ -14,14 +14,14 @@
     margin: 5px;
     width: 270px;
 }
-.sectionropahombres{
+.sectionpopulares{
     color: white;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
 }
-.sectionaccesorios{
+.sectionencartelera{
     color: white;
     display: flex;
     flex-wrap: wrap;
@@ -31,4 +31,20 @@
 .imagenes{
     height: 227px;
     width: 227px;
+}
+.linkvermas{
+    color: white;
+    border: solid 1px white;
+    text-align: center;
+}
+.estilobotones{
+    margin-top: 5px;
+    color: white;
+    border: solid 1px white;
+    text-align: center;
+    padding: 3px;
+    background-color: rgba(245, 245, 220, 0.226);
+    font-family: "Darker Grotesque", sans-serif;
+    font-weight: bold;
+    font-size: medium;
 }

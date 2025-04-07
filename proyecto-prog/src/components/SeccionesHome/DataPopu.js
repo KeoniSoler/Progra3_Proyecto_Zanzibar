@@ -1,4 +1,4 @@
-const ropa = [
+const popu = [
     {
         Imagen: "",
         Titulo: "Bolso de mano",
@@ -40,4 +40,4 @@ const ropa = [
         Fav: ""
     }
 ];
-export default ropa;
+export default popu;
