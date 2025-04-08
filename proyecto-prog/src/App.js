@@ -1,7 +1,8 @@
 import React from "react";
 import {Switch, Route} from 'react-router-dom'
 import Home from './screens/Home/Home';
-import VerTodas from "./screens/VerTodas/VerTodas";
+import VerPopulares from "./screens/VerPopulares/VerPopulares";
+import VerCartelera from "./screens/VerCartelera/VerCartelera";
 import Detalle from "./screens/Detalle/Detalle";
 import Favoritos from "./screens/Favoritos/Favoritos";
 import Busqueda from "./screens/Busqueda/Busqueda";
@@ -17,7 +18,8 @@ function App() {
     <Header />
     <Switch>
       <Route exact={true} path={'/'} component={Home} />
-      <Route path={'/vertodas'} component={VerTodas} />
+      <Route path={'/verpopulares'} component={VerPopulares} />
+      <Route path={'/vercartelera'} component={VerCartelera} />
       <Route path={'/detalle/:id'} component={Detalle} />
       <Route path={'/favoritos'} component={Favoritos} />
       <Route path={'/busqueda'} component={Busqueda} />

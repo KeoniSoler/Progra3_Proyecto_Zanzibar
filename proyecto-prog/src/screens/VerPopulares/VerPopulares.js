@@ -1,11 +1,11 @@
 import React from "react";
 
-function VerTodas() {
+function VerPopulares() {
     return (
         <React.Fragment>
-        <h1>Ver Todas</h1>
+        <h1>Ver Todas las Populares</h1>
         </React.Fragment>
     )
 }
 
-export default VerTodas;
+export default VerPopulares;

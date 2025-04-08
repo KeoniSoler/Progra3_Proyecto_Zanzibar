@@ -1,7 +1,8 @@
 import React, {Component} from "react";
+import { Link } from "react-router-dom";
 import './styles.css';
 
-class SeccionAccesorios extends Component {
+class SeccionEnCartelera extends Component {
     constructor(props){
         super(props)
         this.state={
@@ -16,7 +17,7 @@ class SeccionAccesorios extends Component {
     }
     render() {
         return (
-            <section className="sectionaccesorios">
+            
                 <article className="articleHome">
                     <img src="${data[i].image}" alt="Accesorios" class="imagenes"/>
                     <h4>{this.state.data.Titulo}</h4>
@@ -30,18 +31,17 @@ class SeccionAccesorios extends Component {
                        :
                        ''
                     }
-                    <button onClick={() => this.ocultar}>
+                    <button onClick={() => this.ocultar} className="estilobotones">
                         Ver descripcion
                     </button>
-                    <button>
-                        Ir a detalle
-                    </button>
-                    <button>
+                    <button className="estilobotones">
+                    <Link to={"/detalle/:id"}>Ir a detalle</Link>                    </button>
+                    <button className="estilobotones">
                         Agregar Favoritos
                     </button>
                 </article>
-            </section>
+            
         );
     }
 }
-export default SeccionAccesorios
+export default SeccionEnCartelera
