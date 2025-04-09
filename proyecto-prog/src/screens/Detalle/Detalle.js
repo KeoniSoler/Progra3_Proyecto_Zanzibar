@@ -29,3 +29,4 @@ class Detalle extends Component{
 }
 
 export default Detalle;
+

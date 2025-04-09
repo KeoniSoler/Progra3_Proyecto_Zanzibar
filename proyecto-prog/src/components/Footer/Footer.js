@@ -1,14 +1,15 @@
 import React from "react";
 import './styles.css';
+import { Link } from "react-router-dom";
 
 function Footer (){
     return (
         <React.Fragment> 
         <footer className="footer"> 
         <div>
-            <img src="imagenes/zanzibarlogo.png" alt="footer-logo" class="footer-logo"/>
+           <Link to= "/"> <img src="../../imagenes/zanzibarlogo.png" alt="footer-logo" className="footer-logo"/> </Link> 
         </div>
-            <p>Desarrollado por: Keoni Soler y Salvador de los Heros</p>
+        <p className="participantes"> Keoni Soler | Salvador de los Heros <br/> PROYECTO PROGRAMACION</p>
 
         </footer>
         </React.Fragment>
