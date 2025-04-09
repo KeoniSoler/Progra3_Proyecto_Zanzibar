@@ -1,5 +1,7 @@
 import React, {Component} from "react";
+import MovieGrid from "../../components/GridMovie/GridMovie";
 import Filter from "../../components/Filter/Filter";
+import {Link} from 'react-router-dom';
 
 class VerPopulares extends Component{
     constructor(props){
@@ -37,6 +39,14 @@ class VerPopulares extends Component{
                    :
                    this.state.personajes.map((elm, idx) => <></>)
                 }
+
+            <h2 className="subtitulo"><Link to={"verpopulares"}>PELICULAS MAS POPULARES</Link></h2>
+            <section className="sectionpopulares">
+                <MovieGrid />
+            </section>
+            <button>
+                Cargar Mas
+            </button>
             </React.Fragment>
         )
     }
