@@ -6,7 +6,7 @@ class MovieCard extends Component {
     constructor(props){
         super(props)
         this.state={
-            data: props.datos,
+            data: props.data,
             mostrarContenido: true,
             favorito: false,
         }
@@ -65,13 +65,13 @@ class MovieCard extends Component {
     render(){
         return(
             <React.Fragment>
-                <img src={this.state.data} alt="Mas vistas" className="imagenes"/>
-                    <h4>{this.state.data}</h4>
+                <img src={this.state.data.poster_path} alt="Mas vistas" className="imagenes"/>
+                    <h4>{this.state.data.title}</h4>
                     {
                        this.state.mostrarContenido === true ?
                        <>
                             <p>
-                                {this.state.data}
+                                {this.state.data.overview}
                             </p>
                        </>
                        :

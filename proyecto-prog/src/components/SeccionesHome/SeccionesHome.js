@@ -13,14 +13,14 @@ function SeccionesHome() {
             <h2 className="subtitulo"><Link to={"verpopulares"}>PELICULAS MAS POPULARES</Link></h2>
             <section className="sectionpopulares">
             {
-                popu.map((elm, idx) => <SeccionMasPopulares key={idx} datos={elm}/>)
+                popu.map((elm, idx) => <SeccionMasPopulares key={idx} data={elm}/>)
             }
             </section>
             <p className="linkvermas"><Link to={"verpopulares"}>Ver Todas</Link></p>
             <h2 className="subtitulo"><Link to={"vercartelera"}>PELICULAS EN CARTELERA</Link></h2>
             <section className="sectionencartelera">
             {
-                items.map((elm, idx) => <SeccionEnCartelera key={idx} datos={elm}/>)
+                items.map((elm, idx) => <SeccionEnCartelera key={idx} data={elm}/>)
             }
             </section>
             <p className="linkvermas"><Link to={"vercartelera"}>Ver Todas</Link></p>

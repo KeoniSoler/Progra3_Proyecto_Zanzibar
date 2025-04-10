@@ -16,7 +16,7 @@ class VerPopulares extends Component{
     }
 
     componentDidMount(){
-        fetch(`<https://api.themoviedb.org/3/person/popular>?api_key=<fb93fcd4664bbfe64f105075e91d8d7c>`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=fb93fcd4664bbfe64f105075e91d8d7c`)
         .then((response) => response.json())
         .then((data) => { 
             console.log("Datos:", data); 
