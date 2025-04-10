@@ -1,11 +1,12 @@
 import React from "react";
 import SeccionesHome from "../../components/SeccionesHome/SeccionesHome";
+import Buscador from "../../components/Buscador/Buscador";
  
 
 function Home() {
     return (
         <React.Fragment>
-        <p>buscador</p>
+        <Buscador />
         <SeccionesHome />
         </React.Fragment>
     )

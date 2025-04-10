@@ -16,10 +16,10 @@ class VerPopulares extends Component{
     }
 
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/person/popular&api_key=<fb93fcd4664bbfe64f105075e91d8d7c>')
+        fetch(`<https://api.themoviedb.org/3/person/popular>?api_key=<fb93fcd4664bbfe64f105075e91d8d7c>`)
         .then((response) => response.json())
         .then((data) => { 
-           
+            console.log("Datos:", data); 
             this.setState({
                 peliculas: data.results, 
                 backupPeliculas: data.results
@@ -37,6 +37,7 @@ class VerPopulares extends Component{
         return(
             <React.Fragment>
             <Filter filtro={(busqueda) => this.filtrarPeliculas(busqueda)}/>
+            <h2 className="subtitulo"><Link to={"verpopulares"}>PELICULAS MAS POPULARES</Link></h2>
                 {
                     this.state.peliculas.length === 0 ?
                     <section className="sectionpopulares">
@@ -45,10 +46,7 @@ class VerPopulares extends Component{
                    :
                    this.state.peliculas.map((elm, idx) =>  <MovieCard datos={elm} key={idx + elm.title} />)
                 }
-
-            <h2 className="subtitulo"><Link to={"verpopulares"}>PELICULAS MAS POPULARES</Link></h2>
-           
-            <button>
+            <button className="cargarmas">
                 Cargar Mas
             </button>
             </React.Fragment>
