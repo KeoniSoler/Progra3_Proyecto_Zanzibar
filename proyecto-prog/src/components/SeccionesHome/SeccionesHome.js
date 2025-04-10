@@ -4,6 +4,7 @@ import SeccionMasPopulares from "./SeccionMasPopulares";
 import SeccionEnCartelera from "./SeccionEnCartelera";
 import popu from "./DataPopu";
 import items from "./DataCarte";
+import VerPopulares from "../../screens/VerPopulares/VerPopulares";
 import './styles.css';
 
 function SeccionesHome() {
