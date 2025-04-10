@@ -5,7 +5,7 @@ import VerPopulares from "./screens/VerPopulares/VerPopulares";
 import VerCartelera from "./screens/VerCartelera/VerCartelera";
 import Detalle from "./screens/Detalle/Detalle";
 import Favoritos from "./screens/Favoritos/Favoritos";
-import Busqueda from "./screens/Busqueda/Busqueda";
+import Resultados from "./screens/Resultados/Resultados";
 import NotFound from "./screens/NotFound/NotFound";
 import Loader from "./screens/Loader/Loader";
 import Header from "./components/Header/Header";
@@ -22,7 +22,7 @@ function App() {
       <Route path={'/vercartelera'} component={VerCartelera} />
       <Route path={'/detalle/:id'} component={Detalle} />
       <Route path={'/favoritos'} component={Favoritos} />
-      <Route path={'/busqueda'} component={Busqueda} />
+      <Route path={'/resultados/:busqueda'} component={Resultados} />
       <Route path={'/loader'} component={Loader} />
       <Route path={''} component={NotFound} />
     </Switch>

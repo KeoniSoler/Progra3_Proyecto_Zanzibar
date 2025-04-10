@@ -12,5 +12,16 @@ a{
 color: white;
 text-decoration: none;
 }
+.cargarmas{
+    margin-top: 5px;
+    color: white;
+    border: solid 1px white;
+    text-align: center;
+    padding-bottom: 5px;
+    background-color: rgba(245, 245, 220, 0.226);
+    font-family: "Darker Grotesque", sans-serif;
+    font-weight: bold;
+    font-size: medium;
+}
 @media (max-width: 420px){
 }
