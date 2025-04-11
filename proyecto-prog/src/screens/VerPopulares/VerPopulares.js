@@ -12,6 +12,7 @@ class VerPopulares extends Component{
         this.state = {
             peliculas: [],
             backupPeliculas: [],
+            paginaActual: 0,
         }
     }
 
@@ -22,15 +23,28 @@ class VerPopulares extends Component{
             console.log("Datos:", data); 
             this.setState({
                 peliculas: data.results, 
-                backupPeliculas: data.results
+                backupPeliculas: data.results,
+                paginaActual: 1,
             })
         })
         .catch((error) => console.log(error))
     }
-
+    // Funcion para filtrar peliculas por nombre. Es diferente al buscador.
     filtrarPeliculas(busquedaPeli){
         const peliculasFiltradas = this.state.backupPeliculas.filter((elm) => elm.name.toLowerCase().includes(busquedaPeli.toLowerCase()))
         this.setState({peliculas: peliculasFiltradas})
+    }
+    // Boton en el cual se cargan mas peliculas de las que habia en un principio
+    cargarMas(){
+        fetch(`https://api.themoviedb.org/3/movie/popular?page=${this.state.paginaActual + 1}&api_key=fb93fcd4664bbfe64f105075e91d8d7c`)
+        .then((response) => response.json())
+        .then((data) => 
+            this.setState({
+                peliculas: this.state.backupPeliculas.concat(data.results), 
+                backupPeliculas: this.state.backupPeliculas.concat(data.results),
+                paginaActual: this.state.paginaActual + 1,
+            }))
+        .catch((error) => console.log(error))
     }
 
     render(){
@@ -41,12 +55,14 @@ class VerPopulares extends Component{
                 {
                     this.state.peliculas.length === 0 ?
                     <section className="sectionpopulares">
-                    <GridMovie />
+                    <GridMovie peliculas={[]}/>
                     </section>
                    :
-                   this.state.peliculas.map((elm, idx) =>  <MovieCard datos={elm} key={idx + elm.title} />)
+                   <section className="sectionpopulares">
+                    <GridMovie peliculas={this.state.peliculas}/>
+                    </section>
                 }
-            <button className="cargarmas">
+            <button className="cargarmas" onClick={() => this.cargarMas()}>
                 Cargar Mas
             </button>
             </React.Fragment>

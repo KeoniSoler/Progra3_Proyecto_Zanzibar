@@ -77,7 +77,7 @@ class MovieCard extends Component {
                        :
                        ''
                     }
-                    <button onClick={() => this.ocultar} className="estilobotones">
+                    <button onClick={() => this.ocultar()} className="estilobotones">
                         Ver descripcion
                     </button>
                     <button className="estilobotones">
