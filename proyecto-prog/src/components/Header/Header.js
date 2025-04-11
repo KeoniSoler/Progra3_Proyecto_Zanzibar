@@ -16,11 +16,11 @@ function Header() {
         },
         {
             name: "POPULARES",
-            path: "..."
+            path: "/verpopulares"
         },
         {
             name: "CARTELERA",
-            path: "..."
+            path: "/vercartelera"
         }
     ]
     let nav = [

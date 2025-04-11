@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import GridMovie from "../../components/GridMovie/GridMovie";
 import Filter from "../../components/Filter/Filter";
 import {Link} from 'react-router-dom';
-import MovieCard from "../../components/MovieCard/MovieCard";
 
 
 
@@ -54,13 +53,11 @@ class VerPopulares extends Component{
             <h2 className="subtitulo"><Link to={"verpopulares"}>PELICULAS MAS POPULARES</Link></h2>
                 {
                     this.state.peliculas.length === 0 ?
-                    <section className="sectionpopulares">
-                    <GridMovie peliculas={[]}/>
-                    </section>
+                    <p>Cargando</p>
                    :
-                   <section className="sectionpopulares">
+                
                     <GridMovie peliculas={this.state.peliculas}/>
-                    </section>
+                    
                 }
             <button className="cargarmas" onClick={() => this.cargarMas()}>
                 Cargar Mas

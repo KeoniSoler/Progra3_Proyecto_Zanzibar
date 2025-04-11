@@ -65,6 +65,7 @@ class MovieCard extends Component {
     render(){
         return(
             <React.Fragment>
+                <article className="articleHome">
                 <img src={this.state.data.poster_path} alt="Mas vistas" className="imagenes"/>
                     <h4>{this.state.data.title}</h4>
                     {
@@ -94,6 +95,7 @@ class MovieCard extends Component {
                     <button onClick={()=>this.agregarFavoritos(this.state.data.id)}className="estilobotones">
                         Agregar Favoritos
                     </button>
+                </article>
             </React.Fragment>
         )
     }

@@ -5,11 +5,11 @@ import './styles.css';
 class GridMovie extends Component {
     render() {
         return (
-            <article className="articleHome">
+            <section className="sectionpopulares">
                 {this.props.peliculas.map((peli, idx) => (
                     <MovieCard data={peli} key={idx + peli.title} />
                 ))}
-            </article>
+            </section>
         )
     }
 }
