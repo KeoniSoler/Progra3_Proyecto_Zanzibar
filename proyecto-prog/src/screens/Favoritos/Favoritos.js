@@ -12,18 +12,18 @@ class Favoritos extends Component{
     }
 
     componentDidMount(){
-        const storageFavoritos = localStorage.getItem('favoritos')
+        const storageFavoritos = localStorage.getItem('favoritos');
         if(storageFavoritos !== null){
-            const favoritosParseado = JSON.parse(storageFavoritos)
+            const favoritosParseado = JSON.parse(storageFavoritos);
             if(favoritosParseado.length > 0){
                
                //Como los fetch son acciones asincronas, necesito tener alguna forma de asegurarme en la que todas las promesas se resuelvan.
                //Una vez que se resuelvan, ahi si actualizar el estado --> para eso creamos Promise.all (no entra en el oral)
                 Promise.all(
                    favoritosParseado.map((elm) => 
-                    fetch('' + elm)
+                    fetch(`https://api.themoviedb.org/3/movie/${elm}?api_key=fb93fcd4664bbfe64f105075e91d8d7c` + elm)
                    .then((response) => response.json())
-                   .catch((err) => console.log(err))
+                   .catch((error) => console.log(error))
                  ) 
               )
               //Este .then() se ejecuta una vez que el Promise.all() ocurra completamente
@@ -32,7 +32,7 @@ class Favoritos extends Component{
                 pelisFavoritas: data,
                 hayPelisEnFavoritos: true
              }))
-              .catch((err) => console.log(err))
+              .catch((error) => console.log(error))
 
             }
 
@@ -48,7 +48,7 @@ class Favoritos extends Component{
 
     render(){
     return(
-        <div>
+        <section className="sectionpopulares">
             {
                 this.state.pelisFavoritas.length > 0 ?
                 this.state.pelisFavoritas.map((elm, idx) => 
@@ -63,8 +63,7 @@ class Favoritos extends Component{
                 :
                 <h1>Cargando tus peliculas favoritas</h1>
             }
-        
-        </div>
+        </section>
      )
     }
 }

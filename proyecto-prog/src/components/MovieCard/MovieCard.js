@@ -70,17 +70,17 @@ class MovieCard extends Component {
         return(
             <React.Fragment>
                 <article className="articleHome">
-                <img src={'https://image.tmbd.org/t/p/w300/' + this.state.data.poster_path} alt="Mas vistas" className="imagenes"/>
+                <img src={'https://image.tmdb.org/t/p/w780/' + this.state.data.poster_path} alt="Mas vistas" className="imagenes"/>
                     <h4>{this.state.data.title}</h4>
                     {
                        this.state.mostrarContenido === true ?
+                       ''
+                       :
                        <>
                             <p>
                                 {this.state.data.overview}
                             </p>
                        </>
-                       :
-                       ''
                     }
                     <button onClick={() => this.ocultar()} className="estilobotones">
                         Ver descripcion
@@ -94,11 +94,10 @@ class MovieCard extends Component {
                             Sacar Favoritos
                         </button>
                         :
-                        ''
-                    }
-                    <button onClick={()=>this.agregarFavoritos(this.state.data.id)}className="estilobotones">
+                        <button onClick={()=>this.agregarFavoritos(this.state.data.id)} className="estilobotones">
                         Agregar Favoritos
-                    </button>
+                        </button>
+                    }
                 </article>
             </React.Fragment>
         )

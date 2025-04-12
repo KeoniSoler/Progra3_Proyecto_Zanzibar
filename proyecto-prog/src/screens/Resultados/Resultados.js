@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Buscador from "../../components/Buscador/Buscador";
+import MovieCard from "../../components/MovieCard/MovieCard";
 
 class Resultados extends Component{
     constructor(props){
@@ -10,7 +10,7 @@ class Resultados extends Component{
         }
     }
     componentDidMount(){
-        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.state.busqueda}&api_key=<fb93fcd4664bbfe64f105075e91d8d7c>`)
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.state.busqueda}&api_key=fb93fcd4664bbfe64f105075e91d8d7c`)
         .then((response) => response.json())
         .then(data => this.setState({resultados: data.results}))
         .catch(error => console.log(error))
@@ -18,13 +18,20 @@ class Resultados extends Component{
     render(){
         return (
             <React.Fragment>
-            <h4>Resultados: {this.state.busqueda}</h4>
-            <section>
-                {this.state.resultados.map(elm => <h1>{elm.original_title}</h1>)}
+            <h2 className="subtitulo">RESULTADOS DE: {this.state.busqueda}</h2>
+            <section className="sectionpopulares">
+                {
+                    this.state.resultados.length > 0
+                    ? 
+                    this.state.resultados.map(elm => (
+                        <MovieCard data={elm} key={elm.id} />
+                    ))
+                    : 
+                    <h2 className="subtitulo">No se han encontrado resultados</h2>
+                }
             </section>
             </React.Fragment>
         )
     }
 }
-
 export default Resultados;
