@@ -49,6 +49,7 @@ class MovieCard extends Component {
             favorito: true,
         })
     }
+
     sacarFavortio(id){
         const storage = localStorage.getItem('favoritos')
         const storageParseado = JSON.parse(storage)
@@ -59,6 +60,9 @@ class MovieCard extends Component {
         this.setState({
             favorito: false,
         })  
+        if(this.props.borrarDeFavoritos !== undefined){
+            this.props.borrarDeFavoritos(id)
+        }
     }
 
 
@@ -66,7 +70,7 @@ class MovieCard extends Component {
         return(
             <React.Fragment>
                 <article className="articleHome">
-                <img src={this.state.data.poster_path} alt="Mas vistas" className="imagenes"/>
+                <img src={'https://image.tmbd.org/t/p/w300/' + this.state.data.poster_path} alt="Mas vistas" className="imagenes"/>
                     <h4>{this.state.data.title}</h4>
                     {
                        this.state.mostrarContenido === true ?
