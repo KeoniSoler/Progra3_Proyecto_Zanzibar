@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './styles.css';
 
 class DetalleCard extends Component {
     constructor(props){
@@ -65,17 +66,17 @@ class DetalleCard extends Component {
 
     render(){
         return(
-            <section>
-                <article>
+            <section className = "sectionDetalle">
+                <article className = "imagenDetalle">
                     <img src={'https://image.tmdb.org/t/p/w780/' + this.state.data.poster_path} alt="Mas vistas" className="imagenes"/>
                 </article>
-                <article>
-                    <h4>{this.state.data.title}</h4>
-                    <p>Rating: {this.state.data.vote_average}</p>
-                    <p>Fecha de estreno: {this.state.data.release_date}</p>
-                    <p>Duracion: {this.state.data.runtime}</p>
-                    <p>Sinopsis: {this.state.data.overview}</p>
-                    <p>Géneros: {this.state.data.genres ? this.state.data.genres.map((genero) => genero.name).join(', ') : 'Cargando géneros...'}</p>                    {
+                <article className = "infoDetalle">
+                    <h4 className = "titleInfo">{this.state.data.title}</h4>
+                    <p className = "parrafoInfo">Rating: {this.state.data.vote_average}</p>
+                    <p className = "parrafoInfo">Fecha de estreno: {this.state.data.release_date}</p>
+                    <p className = "parrafoInfo">Duracion: {this.state.data.runtime}</p>
+                    <p className = "parrafoInfo">Sinopsis: {this.state.data.overview}</p>
+                    <p className = "parrafoInfo">Géneros: {this.state.data.genres ? this.state.data.genres.map((genero) => genero.name).join(', ') : 'Cargando géneros...'}</p>                    {
                         this.state.favorito === true ?
                         <button onClick={()=>this.sacarFavortio(this.state.data.id)} className="estilobotones">
                             Sacar Favoritos

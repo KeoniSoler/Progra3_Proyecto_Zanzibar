@@ -1,0 +1,49 @@
+.sectionDetalle {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(245, 245, 220, 0.226);
+    border: solid 2px lightblue;
+}
+
+.imagenDetalle img {
+    margin-right: 30px;
+    width: 300px;
+}
+
+.infoDetalle {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleInfo {
+    font-size: 24px;
+    color: white;
+}
+
+.parrafoInfo {
+    font-size: 16px;
+    color: ivory;
+
+}
+
+.estilobotones{
+    margin-top: 5px;
+    color: white;
+    border: solid 1px white;
+    text-align: center;
+    padding: 3px;
+    background-color: rgba(245, 245, 220, 0.226);
+    font-family: "Darker Grotesque", sans-serif;
+    font-weight: bold;
+    font-size: medium;
+}
+
+
+
+
