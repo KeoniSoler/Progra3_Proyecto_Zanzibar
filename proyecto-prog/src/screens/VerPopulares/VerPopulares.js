@@ -30,8 +30,14 @@ class VerPopulares extends Component{
     }
     // Funcion para filtrar peliculas por nombre. Es diferente al buscador.
     filtrarPeliculas(busquedaPeli){
-        const peliculasFiltradas = this.state.backupPeliculas.filter((elm) => elm.name.toLowerCase().includes(busquedaPeli.toLowerCase()))
-        this.setState({peliculas: peliculasFiltradas})
+        if(busquedaPeli === ""){
+            this.setState({peliculas: this.state.backupPeliculas});
+        }else{
+            fetch(`https://api.themoviedb.org/3/search/movie?query=${busquedaPeli}&api_key=fb93fcd4664bbfe64f105075e91d8d7c`)
+                .then(response => response.json())
+                .then(data => this.setState({peliculas: data.results}))
+                .catch(error => console.log(error));
+        }
     }
     // Boton en el cual se cargan mas peliculas de las que habia en un principio
     cargarMas(){

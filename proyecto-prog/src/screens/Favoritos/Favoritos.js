@@ -21,7 +21,7 @@ class Favoritos extends Component{
                //Una vez que se resuelvan, ahi si actualizar el estado --> para eso creamos Promise.all (no entra en el oral)
                 Promise.all(
                    favoritosParseado.map((elm) => 
-                    fetch(`https://api.themoviedb.org/3/movie/${elm}?api_key=fb93fcd4664bbfe64f105075e91d8d7c` + elm)
+                    fetch(`https://api.themoviedb.org/3/movie/${elm}?api_key=fb93fcd4664bbfe64f105075e91d8d7c`)
                    .then((response) => response.json())
                    .catch((error) => console.log(error))
                  ) 
