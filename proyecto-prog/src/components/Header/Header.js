@@ -49,9 +49,9 @@ function Header() {
             path: "#"
         },
     ]
-    return(
+    return (
         <header>
-            <Navbar barra={nav}/>
+            <Navbar barra={nav} />
             <LogoHeader />
             <OpcionesMenu menu={opciones} />
         </header>

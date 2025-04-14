@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 
 class Buscador extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             input: '',
         }
     }
-    controlarForm(evento){
+    controlarForm(evento) {
         evento.preventDefault();
         this.props.history.push('/resultados/' + this.state.input)
     }
-    controlarInput(evento){
-        this.setState({input: evento.target.value})
+    controlarInput(evento) {
+        this.setState({ input: evento.target.value })
     }
-    render(){
-        return(
+    render() {
+        return (
             <form onSubmit={(evento) => this.controlarForm(evento)}>
-                <input placeholder='buscador ' value={this.state.input} onChange={(evento) => this.controlarInput(evento)}/>
+                <input placeholder='buscador ' value={this.state.input} onChange={(evento) => this.controlarInput(evento)} />
                 <button type='submit'>Buscar</button>
             </form>
         )
